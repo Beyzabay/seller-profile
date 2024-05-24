@@ -10,3 +10,7 @@
     font-size: 12px;
     text-align: left;
 }
+label.required::before {
+    content: ' *';
+    color: red;
+  }
