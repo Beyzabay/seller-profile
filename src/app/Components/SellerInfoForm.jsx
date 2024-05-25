@@ -142,7 +142,7 @@ const SellerInfoForm = () => {
           <div className="!mt-10 !mb-10 flex justify-end">
             <button
               type="button"
-              className="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-2xl text-sm px-5 py-2.5 me-2 mr-15"
+              className="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-2xl text-sm px-5 py-2.5 me-2 mr-15"
               onClick={handleSubmit}
             >
               Değişiklikleri Kaydet
@@ -150,7 +150,7 @@ const SellerInfoForm = () => {
             <button
               type="submit"
               onClick={handleCancel}
-              className="text-white bg-red-600 hover:bg-red-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-2xl text-sm px-5 py-2.5 me-2"
+              className="text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-2xl text-sm px-5 py-2.5 me-2"
             >
               Vazgeç
             </button>

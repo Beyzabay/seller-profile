@@ -67,24 +67,17 @@ const ProfilePhotoUpload = () => {
               type="file"
               accept="image/*"
               onChange={handleImageChange}
-              className="hidden"
-              id="image-upload"
-            />
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
               className="border rounded-md mt-2 p-1 w-full"
             />
             {/* Butonlar */}
             <div className="flex items-start mt-4 gap-5">
               {image && (
-                <button className="bg-green-500 text-white px-4 py-2 rounded-md" onClick={handleImageUpdate}>
+                <button className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600" onClick={handleImageUpdate}>
                   Güncelle
                 </button>
               )}
               {selectedImage && (
-                <button className="bg-red-500 text-white px-4 py-2 rounded-md" onClick={handleImageDelete}>
+                <button className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md" onClick={handleImageDelete}>
                   Delete
                 </button>
               )}
