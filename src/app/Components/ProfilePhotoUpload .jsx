@@ -47,8 +47,7 @@ const ProfilePhotoUpload = () => {
     <div className="container flex items-center justify-center">
       <div className="w-48 h-48 overflow-hidden rounded-full" onClick={openPopup}>
         <img
-          src={selectedImage ? selectedImage : "https://media.istockphoto.com/id/1386479313/tr/foto%C4%9Fraf/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=X0duG4XnaH_BMWk9S2k0h96ztBAB7bguOL0e6iYljIY="}
-          alt="Happy Millennial Afro American Business Woman"
+          src={selectedImage ? selectedImage : "https://freesvg.org/img/abstract-user-flat-4.png"}
           className="object-cover w-full h-full rounded-full"
         />
       </div>
@@ -82,11 +81,6 @@ const ProfilePhotoUpload = () => {
               {image && (
                 <button className="bg-green-500 text-white px-4 py-2 rounded-md" onClick={handleImageUpdate}>
                   Güncelle
-                </button>
-              )}
-              {!selectedImage && (
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md" onClick={handleImageUpdate}>
-                 Fotoğraf ekle
                 </button>
               )}
               {selectedImage && (

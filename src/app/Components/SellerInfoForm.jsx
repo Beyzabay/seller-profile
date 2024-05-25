@@ -8,9 +8,13 @@ const SellerInfoForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const onSubmit = () => {
-    console.log("Form submitted successfully!");
     setIsSubmitted(true);
   };
+
+  const handleCancel = () => {
+    setIsSubmitted(false);
+    window.location.reload();
+  }
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -46,7 +50,7 @@ const SellerInfoForm = () => {
           <div className="flex flex-wrap"></div>
           <div className="flex flex-wrap space-y-4 md:space-y-0">
             <div className="w-full px-2 mb-2 md:w-1/2">
-              <label className="required block mb-1">İsim</label>
+              <label className="required block mb-1 font-nunito">İsim</label>
               <input
                 className={`required w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg ${
                   errors.name ? "input-error" : ""
@@ -62,7 +66,7 @@ const SellerInfoForm = () => {
               {errors.name && <p className="error">{errors.name}</p>}
             </div>
             <div className="w-full px-2 md:w-1/2">
-              <label className="block mb-1 required">Soyisim</label>
+              <label className="block mb-1 required font-nunito">Soyisim</label>
               <input
                 className={`w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg ${
                   errors.surname ? "input-error" : ""
@@ -77,7 +81,7 @@ const SellerInfoForm = () => {
               {errors.surname && <p className="error">{errors.surname}</p>}
             </div>
             <div className="w-full px-2 !mt-4">
-              <label className="block mb-1 required">Hakkında</label>
+              <label className="block mb-1 required font-nunito">Hakkında</label>
               <textarea
                 rows="1"
                 className={`p-2.5 w-full px-3 text-base placeholder-gray-600 border rounded-lg ${
@@ -95,7 +99,7 @@ const SellerInfoForm = () => {
           </div>
           <div className="flex flex-col space-y-4 md:space-y-5">
             <div className="w-full px-2">
-              <label className="required block mb-1">E-mail</label>
+              <label className="required block mb-1 font-nunito">E-mail</label>
               <input
                 className={`w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg ${
                   errors.email ? "input-error" : ""
@@ -110,7 +114,7 @@ const SellerInfoForm = () => {
               {errors.email && <p className="error">{errors.email}</p>}
             </div>
             <div className="w-full px-2">
-              <label className="block mb-1">Instagram</label>
+              <label className="block mb-1 font-nunito">Instagram</label>
               <input
                 className="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                 type="text"
@@ -118,7 +122,7 @@ const SellerInfoForm = () => {
               />
             </div>
             <div className="w-full px-2">
-              <label className="block mb-1">Twitter</label>
+              <label className="block mb-1 font-nunito">Twitter</label>
               <input
                 className="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                 type="text"
@@ -126,7 +130,7 @@ const SellerInfoForm = () => {
               />
             </div>
             <div className="w-full px-2">
-              <label className="block mb-1">Facebook</label>
+              <label className="block mb-1 font-nunito">Facebook</label>
               <input
                 className="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
                 type="text"
@@ -134,17 +138,18 @@ const SellerInfoForm = () => {
               />
             </div>
           </div>
-          <div className="!mt-8 flex justify-end">
+          <div className="!mt-10 !mb-10 flex justify-end">
             <button
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              className="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-2xl text-sm px-5 py-2.5 me-2 mr-15"
               onClick={handleSubmit}
             >
               Değişiklikleri Kaydet
             </button>
             <button
               type="submit"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              onClick={() => handleCancel()}
+              className="text-white bg-red-600 hover:bg-red-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-2xl text-sm px-5 py-2.5 me-2"
             >
               Vazgeç
             </button>
