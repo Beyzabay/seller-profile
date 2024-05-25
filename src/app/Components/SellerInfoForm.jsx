@@ -6,16 +6,16 @@ import { basicSchemas } from "../schemas";
 
 const SellerInfoForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+// Form kaydedilince çalışan fonksiyon
   const onSubmit = () => {
     setIsSubmitted(true);
   };
-
+// Vazgeç butonu ile çalışan fonksiyon
   const handleCancel = () => {
     setIsSubmitted(false);
     window.location.reload();
   }
-
+// Formik yapısına ait validationlar
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
       name: "",
@@ -31,7 +31,7 @@ const SellerInfoForm = () => {
     setIsSubmitted(false);
     window.location.reload();
   };
-
+// isSubmitted true döndükten 3 saniye sonra closeModal fonksiyonunu çağırır.
   useEffect(() => {
     let timeout;
     if (isSubmitted) {
@@ -46,6 +46,7 @@ const SellerInfoForm = () => {
   return (
     <>
       <div>
+        {/* Form alanı */}
         <form className="space-y-4 text-gray-700" onSubmit={handleSubmit}>
           <div className="flex flex-wrap"></div>
           <div className="flex flex-wrap space-y-4 md:space-y-0">
@@ -148,7 +149,7 @@ const SellerInfoForm = () => {
             </button>
             <button
               type="submit"
-              onClick={() => handleCancel()}
+              onClick={handleCancel}
               className="text-white bg-red-600 hover:bg-red-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-2xl text-sm px-5 py-2.5 me-2"
             >
               Vazgeç
@@ -156,7 +157,7 @@ const SellerInfoForm = () => {
           </div>
         </form>
       </div>
-
+{/* Formun submit edilmesiyle gösterilen modal */}
       <Modal isOpen={isSubmitted} onClose={closeModal} closeOnOverlayClick={false} closeOnEsc={false}>
         <ModalOverlay />
         <ModalContent borderRadius={0} boxShadow="none" bg="transparent">
